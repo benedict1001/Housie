@@ -76,6 +76,7 @@
     <Content Include="adminhomepage.aspx" />
     <Content Include="adminlogin.aspx" />
     <Content Include="adminlowrating.aspx" />
+    <Content Include="adminm.aspx" />
     <Content Include="adminpayment.aspx" />
     <Content Include="adminpropertydetails.aspx" />
     <Content Include="adminreport.aspx" />
@@ -166,6 +167,13 @@
     </Compile>
     <Compile Include="adminlowrating.aspx.designer.cs">
       <DependentUpon>adminlowrating.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminm.aspx.cs">
+      <DependentUpon>adminm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminm.aspx.designer.cs">
+      <DependentUpon>adminm.aspx</DependentUpon>
     </Compile>
     <Compile Include="adminpayment.aspx.cs">
       <DependentUpon>adminpayment.aspx</DependentUpon>

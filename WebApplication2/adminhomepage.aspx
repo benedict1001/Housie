@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Admin Dashboard" Language="C#" MasterPageFile="~/adminmaster.Master" AutoEventWireup="true" CodeBehind="adminhomepage.aspx.cs" Inherits="WebApplication2.adminhomepage" %>
+<%@ Page Title="Admin Dashboard" Language="C#" MasterPageFile="~/adminmaster.Master" AutoEventWireup="true" CodeBehind="adminhomepage.aspx.cs" Inherits="WebApplication2.adminhomepage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         /* --- Styles --- */
@@ -210,4 +210,20 @@
                 <a href="adminappeals.aspx" class="btn btn-outline-primary w-100 rounded-pill" style="border-color: #8b5cf6; color: #8b5cf6;">View Messages</a>
             </div>
         </div>
-    </div></asp:Content>
+    </div>
+    
+    <div class="row g-4 mb-4">
+        <div class="col-md-4">
+            <div class="stat-card" style="border-bottom: 5px solid #6366f1;">
+                <div>
+                    <i class="bi bi-person-badge stat-icon" style="color: #6366f1;"></i>
+                    <div class="stat-number">
+                        All Hosts
+                    </div>
+                    <div class="stat-label">Complete Platform Directory</div>
+                </div>
+                <a href="adminm.aspx" class="btn btn-outline-primary w-100 rounded-pill" style="border-color: #6366f1; color: #6366f1;">View Directory</a>
+            </div>
+        </div>
+    </div>
+</asp:Content>
