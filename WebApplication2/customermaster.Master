@@ -1,0 +1,262 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="customermaster.master.cs" Inherits="WebApplication2.customermaster" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Housie</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- GLOBAL STYLES --- */
+        body {
+            font-family: 'Circular', -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #222222;
+            background-color: #fdf4f5; 
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- HEADER LAYOUT (UPGRADED TO LIQUID GLASS) --- */
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            padding: 0 40px;
+            
+            /* Enhanced Glassmorphism Effect */
+            background: linear-gradient(135deg, rgba(253, 244, 245, 0.7) 0%, rgba(255, 255, 255, 0.4) 100%);
+            backdrop-filter: blur(20px) saturate(120%);
+            -webkit-backdrop-filter: blur(20px) saturate(120%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+            
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* 1. Left: Brand Text Only */
+        .brand-logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 6px;
+            transition: transform 0.2s ease;
+            flex: 1; 
+        }
+        .brand-logo-link:hover { transform: scale(1.02); text-shadow: 0 4px 10px rgba(230, 30, 77, 0.2); }
+        .brand-text {
+            color: #E61E4D;
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        /* 2. Right: Host & Profile */
+        .right-nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
+            flex: 1; 
+        }
+
+        .host-link {
+            text-decoration: none;
+            color: #222222;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 12px 18px;
+            border-radius: 30px;
+            transition: all 0.2s;
+        }
+        .host-link:hover { background-color: rgba(255,255,255,0.6); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+
+        /* Profile Dropdown Container */
+        .profile-menu-container { position: relative; margin-left: 8px; }
+        
+        .profile-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            /* Glassmorphism for the button */
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            padding: 6px 6px 6px 14px;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.2s;
+        }
+        .profile-btn:hover { 
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            transform: translateY(-2px);
+        }
+        .profile-icon {
+            background: linear-gradient(135deg, #717171 0%, #444 100%);
+            color: white;
+            border-radius: 50%;
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        /* Glass Dropdown Box */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 56px;
+            right: 0;
+            /* Frosted Glass Menu */
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            min-width: 250px;
+            border-radius: 16px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.9);
+            z-index: 1001;
+            padding: 12px 0;
+            animation: fadeIn 0.2s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .profile-menu-container:hover .dropdown-menu { display: block; }
+
+        .dropdown-item {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #222222;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+        .dropdown-item.bold { font-weight: 600; }
+        .dropdown-item:hover { background-color: rgba(0,0,0,0.05); }
+        .dropdown-divider { height: 1px; background-color: rgba(0,0,0,0.08); margin: 8px 0; }
+
+        /* --- CONTENT & FOOTER --- */
+        main {
+            flex: 1; 
+            display: block;
+        }
+
+        .site-footer {
+            border-top: 1px solid rgba(0,0,0,0.05);
+            background-color: #f9ecee; 
+            padding: 24px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: #222;
+        }
+        .footer-links a {
+            color: #222;
+            text-decoration: none;
+            margin-left: 16px;
+        }
+        .footer-links a:hover { text-decoration: underline; }
+
+        @media (max-width: 900px) {
+            .site-header { padding: 0 20px; }
+            .site-footer { flex-direction: column; gap: 12px; text-align: center; }
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+        <header class="site-header">
+            
+            <a href="customerhomepage.aspx" class="brand-logo-link">
+                <svg viewBox="0 0 576 512" style="fill: #E61E4D; height: 32px; width: 36px; margin-right: 8px; margin-bottom: 4px;"><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>
+                <span class="brand-text">Housie</span>
+            </a>
+
+            <div class="right-nav">
+             
+                <a href="hostregistrationform.aspx" class="host-link">Become a host</a>
+                
+                <div class="profile-menu-container">
+                    <div class="profile-btn">
+                        <i class="fas fa-bars" style="font-size: 14px; color: #222;"></i>
+                        <div class="profile-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown-menu">
+                        <% if (Session["cid"] != null) { %>
+                            <a href="customertrips.aspx" class="dropdown-item bold">Trips</a>
+                            <a href="customertrips.aspx" class="dropdown-item bold">Booking</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="logout.aspx" class="dropdown-item">Log out</a>
+                        <% } else { %>
+                            <a href="customerloginform.aspx" class="dropdown-item bold">Log in</a>
+                            <a href="customerregistrationform.aspx" class="dropdown-item">Sign up</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="hostloginform.aspx" class="dropdown-item">Host login</a>
+                        <% } %>
+                        <a href="#" class="dropdown-item">Help Centre</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+
+        <footer class="site-footer">
+            <div>
+                &copy; 2026 Housie, Inc. All rights reserved.
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </footer>
+
+    </form>
+    <script type="text/javascript">
+            // Listen for any key presses on the page
+            document.addEventListener('keydown', function(event) {
+                // Check if the user is pressing Ctrl + Shift + A
+                if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === 'a') {
+                    event.preventDefault(); 
+                    // Redirect instantly to your admin page! 
+                    window.location.href = 'adminhomepage.aspx'; // MAKE SURE THIS MATCHES YOUR ACTUAL ADMIN LOGIN FILE NAME
+                }
+            });
+    </script>
+     <script type="text/javascript">
+         // Listen for any key presses on the page
+         document.addEventListener('keydown', function (event) {
+             // Check if the user is pressing Ctrl + Shift + A
+             if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === 'h') {
+                 event.preventDefault();
+                 // Redirect instantly to your admin page! 
+                 window.location.href = 'hostloginform.aspx'; // MAKE SURE THIS MATCHES YOUR ACTUAL ADMIN LOGIN FILE NAME
+             }
+         });
+     </script>
+</body>
+</html>

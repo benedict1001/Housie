@@ -1,0 +1,520 @@
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E5AF9A0B-7416-4692-A361-17CCF86BFA8B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication2</RootNamespace>
+    <AssemblyName>WebApplication2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44397</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Google.Apis" Version="1.73.0" />
+    <PackageReference Include="Google.Apis.Auth" Version="1.73.0" />
+    <PackageReference Include="Google.Apis.Core" Version="1.73.0" />
+    <PackageReference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform" Version="2.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="activehost.aspx" />
+    <Content Include="activehostdetails.aspx" />
+    <Content Include="add_property.aspx" />
+    <Content Include="adminappeals.aspx" />
+    <Content Include="adminhomepage.aspx" />
+    <Content Include="adminlogin.aspx" />
+    <Content Include="adminlowrating.aspx" />
+    <Content Include="adminm.aspx" />
+    <Content Include="adminpayment.aspx" />
+    <Content Include="adminpropertydetails.aspx" />
+    <Content Include="adminreport.aspx" />
+    <Content Include="adminreview.aspx" />
+    <Content Include="adminviewallproperty.aspx" />
+    <Content Include="aichatbot.aspx" />
+    <Content Include="chat.aspx" />
+    <Content Include="check-inconformation.aspx" />
+    <Content Include="checkout_conformation.aspx" />
+    <Content Include="customerbookproperty.aspx" />
+    <Content Include="customeremailsignin.aspx" />
+    <Content Include="customerforgotpassword.aspx" />
+    <Content Include="customerhomepage.aspx" />
+    <Content Include="customerloginform.aspx" />
+    <Content Include="customerpropertydetail.aspx" />
+    <Content Include="customerregistrationform.aspx" />
+    <Content Include="customerreview.aspx" />
+    <Content Include="customertrips.aspx" />
+    <Content Include="district.aspx" />
+    <Content Include="edithostproperty.aspx" />
+    <Content Include="example.aspx" />
+    <Content Include="flagproperty.aspx" />
+    <Content Include="hostapprovel.aspx" />
+    <Content Include="hostbooking.aspx" />
+    <Content Include="hostdetailsview.aspx" />
+    <Content Include="hostforgotpassword.aspx" />
+    <Content Include="hosthome.aspx" />
+    <Content Include="hostloginform.aspx" />
+    <Content Include="hostmessages.aspx" />
+    <Content Include="hostpayments.aspx" />
+    <Content Include="hostprofile.aspx" />
+    <Content Include="hostrating.aspx" />
+    <Content Include="hostregistrationform.aspx" />
+    <Content Include="location_type.aspx" />
+    <Content Include="payment.aspx" />
+    <Content Include="propertyapproveldetails.aspx" />
+    <Content Include="propertytype.aspx" />
+    <Content Include="verifyproperties.aspx" />
+    <Content Include="viewproperty.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="activehost.aspx.cs">
+      <DependentUpon>activehost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="activehost.aspx.designer.cs">
+      <DependentUpon>activehost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="activehostdetails.aspx.cs">
+      <DependentUpon>activehostdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="activehostdetails.aspx.designer.cs">
+      <DependentUpon>activehostdetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="add_property.aspx.cs">
+      <DependentUpon>add_property.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="add_property.aspx.designer.cs">
+      <DependentUpon>add_property.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminappeals.aspx.cs">
+      <DependentUpon>adminappeals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminappeals.aspx.designer.cs">
+      <DependentUpon>adminappeals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminhomepage.aspx.cs">
+      <DependentUpon>adminhomepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminhomepage.aspx.designer.cs">
+      <DependentUpon>adminhomepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminlogin.aspx.cs">
+      <DependentUpon>adminlogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminlogin.aspx.designer.cs">
+      <DependentUpon>adminlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminlowrating.aspx.cs">
+      <DependentUpon>adminlowrating.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminlowrating.aspx.designer.cs">
+      <DependentUpon>adminlowrating.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminm.aspx.cs">
+      <DependentUpon>adminm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminm.aspx.designer.cs">
+      <DependentUpon>adminm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpayment.aspx.cs">
+      <DependentUpon>adminpayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpayment.aspx.designer.cs">
+      <DependentUpon>adminpayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpropertydetails.aspx.cs">
+      <DependentUpon>adminpropertydetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpropertydetails.aspx.designer.cs">
+      <DependentUpon>adminpropertydetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminreport.aspx.cs">
+      <DependentUpon>adminreport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminreport.aspx.designer.cs">
+      <DependentUpon>adminreport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminreview.aspx.cs">
+      <DependentUpon>adminreview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminreview.aspx.designer.cs">
+      <DependentUpon>adminreview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminviewallproperty.aspx.cs">
+      <DependentUpon>adminviewallproperty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminviewallproperty.aspx.designer.cs">
+      <DependentUpon>adminviewallproperty.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aichatbot.aspx.cs">
+      <DependentUpon>aichatbot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aichatbot.aspx.designer.cs">
+      <DependentUpon>aichatbot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chat.aspx.cs">
+      <DependentUpon>chat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chat.aspx.designer.cs">
+      <DependentUpon>chat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="check-inconformation.aspx.cs">
+      <DependentUpon>check-inconformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="check-inconformation.aspx.designer.cs">
+      <DependentUpon>check-inconformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="checkout_conformation.aspx.cs">
+      <DependentUpon>checkout_conformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="checkout_conformation.aspx.designer.cs">
+      <DependentUpon>checkout_conformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="connection.cs" />
+    <Compile Include="customerbookproperty.aspx.cs">
+      <DependentUpon>customerbookproperty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customerbookproperty.aspx.designer.cs">
+      <DependentUpon>customerbookproperty.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customeremailsignin.aspx.cs">
+      <DependentUpon>customeremailsignin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customeremailsignin.aspx.designer.cs">
+      <DependentUpon>customeremailsignin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customerforgotpassword.aspx.cs">
+      <DependentUpon>customerforgotpassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customerforgotpassword.aspx.designer.cs">
+      <DependentUpon>customerforgotpassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customerhomepage.aspx.cs">
+      <DependentUpon>customerhomepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customerhomepage.aspx.designer.cs">
+      <DependentUpon>customerhomepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customerloginform.aspx.cs">
+      <DependentUpon>customerloginform.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customerloginform.aspx.designer.cs">
+      <DependentUpon>customerloginform.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customermaster.Master.cs">
+      <DependentUpon>customermaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customermaster.Master.designer.cs">
+      <DependentUpon>customermaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="customerpropertydetail.aspx.cs">
+      <DependentUpon>customerpropertydetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customerpropertydetail.aspx.designer.cs">
+      <DependentUpon>customerpropertydetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customerregistrationform.aspx.cs">
+      <DependentUpon>customerregistrationform.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customerregistrationform.aspx.designer.cs">
+      <DependentUpon>customerregistrationform.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customerreview.aspx.cs">
+      <DependentUpon>customerreview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customerreview.aspx.designer.cs">
+      <DependentUpon>customerreview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customertrips.aspx.cs">
+      <DependentUpon>customertrips.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customertrips.aspx.designer.cs">
+      <DependentUpon>customertrips.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="district.aspx.cs">
+      <DependentUpon>district.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="district.aspx.designer.cs">
+      <DependentUpon>district.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="edithostproperty.aspx.cs">
+      <DependentUpon>edithostproperty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="edithostproperty.aspx.designer.cs">
+      <DependentUpon>edithostproperty.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="example.aspx.cs">
+      <DependentUpon>example.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="example.aspx.designer.cs">
+      <DependentUpon>example.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="flagproperty.aspx.cs">
+      <DependentUpon>flagproperty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="flagproperty.aspx.designer.cs">
+      <DependentUpon>flagproperty.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hostapprovel.aspx.cs">
+      <DependentUpon>hostapprovel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hostapprovel.aspx.designer.cs">
+      <DependentUpon>hostapprovel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hostbooking.aspx.cs">
+      <DependentUpon>hostbooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hostbooking.aspx.designer.cs">
+      <DependentUpon>hostbooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hostdetailsview.aspx.cs">
+      <DependentUpon>hostdetailsview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hostdetailsview.aspx.designer.cs">
+      <DependentUpon>hostdetailsview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hostforgotpassword.aspx.cs">
+      <DependentUpon>hostforgotpassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hostforgotpassword.aspx.designer.cs">
+      <DependentUpon>hostforgotpassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hosthome.aspx.cs">
+      <DependentUpon>hosthome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hosthome.aspx.designer.cs">
+      <DependentUpon>hosthome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hostloginform.aspx.cs">
+      <DependentUpon>hostloginform.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hostloginform.aspx.designer.cs">
+      <DependentUpon>hostloginform.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hostmessages.aspx.cs">
+      <DependentUpon>hostmessages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hostmessages.aspx.designer.cs">
+      <DependentUpon>hostmessages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hostmasterpage.Master.cs">
+      <DependentUpon>hostmasterpage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hostmasterpage.Master.designer.cs">
+      <DependentUpon>hostmasterpage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="hostpayments.aspx.cs">
+      <DependentUpon>hostpayments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hostpayments.aspx.designer.cs">
+      <DependentUpon>hostpayments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hostprofile.aspx.cs">
+      <DependentUpon>hostprofile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hostprofile.aspx.designer.cs">
+      <DependentUpon>hostprofile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hostrating.aspx.cs">
+      <DependentUpon>hostrating.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hostrating.aspx.designer.cs">
+      <DependentUpon>hostrating.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hostregistrationform.aspx.cs">
+      <DependentUpon>hostregistrationform.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hostregistrationform.aspx.designer.cs">
+      <DependentUpon>hostregistrationform.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="location_type.aspx.cs">
+      <DependentUpon>location_type.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="location_type.aspx.designer.cs">
+      <DependentUpon>location_type.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="payment.aspx.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="payment.aspx.designer.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="adminmaster.Master.cs">
+      <DependentUpon>adminmaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminmaster.Master.designer.cs">
+      <DependentUpon>adminmaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="propertyapproveldetails.aspx.cs">
+      <DependentUpon>propertyapproveldetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="propertyapproveldetails.aspx.designer.cs">
+      <DependentUpon>propertyapproveldetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="propertytype.aspx.cs">
+      <DependentUpon>propertytype.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="propertytype.aspx.designer.cs">
+      <DependentUpon>propertytype.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="verifyproperties.aspx.cs">
+      <DependentUpon>verifyproperties.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verifyproperties.aspx.designer.cs">
+      <DependentUpon>verifyproperties.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewproperty.aspx.cs">
+      <DependentUpon>viewproperty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewproperty.aspx.designer.cs">
+      <DependentUpon>viewproperty.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="customermaster.Master" />
+    <Content Include="hostmasterpage.Master" />
+    <Content Include="adminmaster.Master" />
+    <Content Include="jsconfig.json" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61755</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44397/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

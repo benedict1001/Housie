@@ -1,0 +1,41 @@
+# Visual Studio / .NET related
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.csproj.user
+*.dbmdl
+*.cache
+*.log
+
+# Build results
+[Bb]in/
+[Oo]bj/
+*.exe
+*.appx
+*.appxbundle
+*.msi
+*.nupkg
+*.zip
+*.publishsettings
+
+# NuGet
+packages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Node / frontend dependencies
+node_modules/
+bower_components/
+
+# OS generated files
+Thumbs.db
+Desktop.ini
+.DS_Store

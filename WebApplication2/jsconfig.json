@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "checkJs": false,
+    "strict": false,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "target": "ES6"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

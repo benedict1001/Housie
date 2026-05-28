@@ -1,0 +1,24 @@
+# Auto detect text files and normalize line endings
+* text=auto
+
+# Visual Studio / .NET file handling
+*.cs     diff=csharp
+*.csproj merge=union
+*.sln    merge=union
+*.aspx   text
+*.ascx   text
+*.master text
+*.config text
+*.xml    text
+*.json   text
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.dll binary
+*.exe binary
+*.pdb binary
+*.zip binary
